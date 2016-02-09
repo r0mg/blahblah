@@ -46,6 +46,8 @@ class Game
       2.times do player_hit
         end
       show_player_hand
+      player_out(player) # checks if player hand is over 21
+      player_win(player) # checks if player hand = 21
       end 
   end
 
@@ -56,6 +58,7 @@ class Game
       show_player_hand
       player_out(player)
       player_win(player)
+      #do something here to make the loopty loop end
     else
 
     while player.status == "playing"
@@ -73,6 +76,7 @@ class Game
     end
 
   def player_out(player)
+
     if player.status == "out"
       puts "#{player.type.capitalize} #{player.number} is out :'("
     end
@@ -88,6 +92,13 @@ class Game
     if move == "1"
       true
     end
+  end
+
+  def dealer_hit
+
+    player_hit
+    # determine highest hand among players with "playing" status
+    # 
   end
 
   def player_hit
