@@ -58,7 +58,7 @@ class Game
       show_player_hand
       player_out(player)
       player_win(player)
-      #do something here to make the loopty loop end
+      declare_winner #do something here to make the loopty loop end
     else
 
     while player.status == "playing"
@@ -74,6 +74,11 @@ class Game
       end
     end
     end
+
+  def declare_winner
+    #method to look at all the players that are still playing and select the highest hand
+    puts "hello!"
+  end
 
   def player_out(player)
 
